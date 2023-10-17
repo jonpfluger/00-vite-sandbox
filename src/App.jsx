@@ -1,8 +1,17 @@
 
 import './App.css'
 
+const name = "Jon"
+const age = 31
+const favColors = ["red", "green", "blue"]
+
 function App() {
-  return <h1>Hello World!</h1>
+  return (
+    <div>
+      <h1>{name} | {age} </h1>
+      <h2>{1 + 1}</h2>
+    </div>
+  )
 }
 
 export default App
