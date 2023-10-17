@@ -1,17 +1,6 @@
-
-import './App.css'
-
-import Button from './components/Button'
-import Header from './components/Header'
-import Nav from './components/Nav'
-
 function App() {
   return (
-    <>
-      <Nav />
-      <Header />
-      <Button />
-    </>
+    <h1>Hello World!</h1>
   )
 }
 
