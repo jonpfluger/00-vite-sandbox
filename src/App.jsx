@@ -1,16 +1,13 @@
 
 import './App.css'
 
-const name = "Jon"
-const age = 31
-const favColors = ["red", "green", "blue"]
+import Button from './components/Button'
+import Header from './components/Header'
+import Nav from './components/Nav'
 
 function App() {
   return (
-    <div>
-      <h1>{name} | {age} </h1>
-      <h2>{favColors.join(", ")}</h2>
-    </div>
+    <Nav />
   )
 }
 
