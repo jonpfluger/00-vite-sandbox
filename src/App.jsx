@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
       <h1>{name} | {age} </h1>
-      <h2>{1 + 1}</h2>
+      <h2>{favColors.join(", ")}</h2>
     </div>
   )
 }
