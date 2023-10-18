@@ -1,6 +1,6 @@
 const Form = props => {
   return (
-    <form>
+    <form onSubmit={props.handleSubmit}>
       <div className="mb-3">
         <label
           htmlFor="exampleInputEmail1"
@@ -34,7 +34,12 @@ const Form = props => {
           id="exampleInputPassword1" 
         />
       </div>
-      <button type="submit" className="btn btn-primary">Submit</button>
+      <button
+        type="submit"
+        className="btn btn-primary"
+      >
+        Submit
+      </button>
     </form>
   )
 }
