@@ -22,9 +22,16 @@ const users = [
 ]
 
 function App() {
+
+  function handleClick() {
+    alert("Hi!!!!")
+  }
+
   return (
     <div className="container">
       <h1>Hello World!</h1>
+
+      <button onClick={handleClick}>Click Me</button>
 
       {users.map(user => {
         return (
