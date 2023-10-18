@@ -24,14 +24,21 @@ const users = [
 
 function App() {
   const [count, setCount] = useState(0)
+  const [teamName, setTeamName] = useState("Packers")
 
   return (
     <div className="container">
       <h1>Count: {count}</h1>
-
+      <h2>The best football team is: {teamName}</h2>
       <button onClick={e => setCount(count + 1)}>Click Me</button>
 
-      {users.map(user => {
+      {/* Controlled Input */}
+      <input
+        value={teamName}
+        onChange={e => setTeamName(e.target.value)}
+      />
+
+      {/* {users.map(user => {
         return (
           <Card
             name={user.name}
@@ -40,7 +47,7 @@ function App() {
             avatar_url={user.avatar_url}
           />
         )
-      })}
+      })} */}
     </div>
   )
 }
