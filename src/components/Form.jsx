@@ -1,4 +1,4 @@
-const Form = () => {
+const Form = props => {
   return (
     <form>
       <div className="mb-3">
@@ -9,6 +9,9 @@ const Form = () => {
           Email address
         </label>
         <input
+          name="email"
+          value={props.formState.email}
+          onChange={props.handleInputChange}
           type="email"
           className="form-control"
           id="exampleInputEmail1"
@@ -23,6 +26,9 @@ const Form = () => {
           Password
         </label>
         <input
+          name="password"
+          value={props.formState.password}
+          onChange={props.handleInputChange}
           type="password"
           className="form-control"
           id="exampleInputPassword1" 

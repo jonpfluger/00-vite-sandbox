@@ -7,9 +7,19 @@ function App() {
     password: '',
   })
 
+  const handleInputChange = e => {
+    setFormState({
+      ...formState,
+      [e.target.name]: e.target.value
+    })
+  }
+
   return (
     <div className="container">
-      
+      <Form
+        formState={formState}
+        handleInputChange={handleInputChange}
+      />
     </div>
   )
 }
