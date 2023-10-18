@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react'
-import Card from './components/Card'
-
-
+import Form from './components/Form'
 
 function App() {
   const [formState, setFormState] = useState({
