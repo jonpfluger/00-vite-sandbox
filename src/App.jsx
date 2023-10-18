@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import Card from './components/Card'
 
 const users = [
@@ -22,20 +23,13 @@ const users = [
 ]
 
 function App() {
-
-  function handleClick() {
-    alert("Hi!!!!")
-  }
-
-  const handleMouseOver = e => {
-    console.log(e)
-  }
+  const [count, setCount] = useState(0)
 
   return (
     <div className="container">
-      <h1 onMouseOver={handleMouseOver}>Hello World!</h1>
+      <h1>Count: {count}</h1>
 
-      <button onClick={handleClick}>Click Me</button>
+      <button onClick={e => setCount(count + 1)}>Click Me</button>
 
       {users.map(user => {
         return (
