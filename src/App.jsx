@@ -27,9 +27,13 @@ function App() {
     alert("Hi!!!!")
   }
 
+  const handleMouseOver = e => {
+    console.log(e)
+  }
+
   return (
     <div className="container">
-      <h1>Hello World!</h1>
+      <h1 onMouseOver={handleMouseOver}>Hello World!</h1>
 
       <button onClick={handleClick}>Click Me</button>
 
