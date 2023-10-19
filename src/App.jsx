@@ -7,6 +7,11 @@ function App() {
     password: '',
   })
 
+  useEffect(() => {
+    // this is a safe place to perform side-effects
+    localStorage.setItem('email', formState.email)
+  }, [formState.email])
+
   const handleInputChange = e => {
     setFormState({
       ...formState,
