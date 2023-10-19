@@ -1,44 +1,44 @@
 import { useState, useEffect } from 'react'
+import Card from './components/Card'
 import Form from './components/Form'
+import { fetchGithubUser } from './utils/github'
 
 function App() {
-  const [formState, setFormState] = useState({
-    email: '',
-    password: '',
-  })
+  const [username, setUsername] = useState('jonpfluger')
+  const [user, setUser] = useState(null)
 
   useEffect(() => {
-    // this is a safe place to perform side-effects
-    localStorage.setItem('email', formState.email)
-  }, [formState.email])
+    fetchGithubUser(username)
+      .then(json => setUser(json))
+  }, [])
 
   const handleInputChange = e => {
-    setFormState({
-      ...formState,
-      [e.target.name]: e.target.value
-    })
+    setUsername(e.target.value)
+    fetchGithubUser(username)
+      .then(json => setUser(json))
   }
 
   const handleSubmit = e => {
     e.preventDefault()
-    
-    // TODO: send form data to /api/submit
-    console.log(formState)
-
-    // reset inputs
-    setFormState({
-      email: '',
-      password: '',
-    })
   }
 
   return (
     <div className="container">
       <Form
-        formState={formState}
+        username={username}
         handleInputChange={handleInputChange}
         handleSubmit={handleSubmit}
       />
+
+      {user ? (
+        <Card 
+          name={user.name}
+          avatar_url={user.avatar_url}
+        />
+      ) : (
+        <p>No user found.</p>
+      )}
+
     </div>
   )
 }

@@ -6,40 +6,24 @@ const Form = props => {
           htmlFor="exampleInputEmail1"
           className="form-label"
         >
-          Email address
+          Username
         </label>
         <input
-          name="email"
-          value={props.formState.email}
+          name="username"
+          value={props.username}
           onChange={props.handleInputChange}
-          type="email"
+          type="text"
           className="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="emailHelp" 
         />
       </div>
-      <div className="mb-3">
-        <label
-          htmlFor="exampleInputPassword1"
-          className="form-label"
-        >
-          Password
-        </label>
-        <input
-          name="password"
-          value={props.formState.password}
-          onChange={props.handleInputChange}
-          type="password"
-          className="form-control"
-          id="exampleInputPassword1" 
-        />
-      </div>
+
       <button
         type="submit"
         className="btn btn-primary"
       >
         Submit
       </button>
+
     </form>
   )
 }
