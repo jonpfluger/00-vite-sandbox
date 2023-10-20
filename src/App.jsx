@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Home from './components/Home'
 import About from './components/About'
 import Contact from './components/Contact'
+import Navbar from './components/Navbar'
 
 const App = () => {
   const [page, setPage] = useState('home')
@@ -20,12 +21,8 @@ const App = () => {
 
   return (
     <>
-      <nav className="d-flex justify-content-center gap-3 bg-dark p-3">
-        <a href="#" className="text-light" onClick={() => setPage('home')}>Home</a>
-        <a href="#" className="text-light" onClick={() => setPage('about')}>About</a>
-        <a href="#" className="text-light" onClick={() => setPage('contact')}>Contact</a>
-      </nav>
-    
+      <Navbar setPage={setPage} />
+
       <div className="container">
         {renderPage()}
       </div>
