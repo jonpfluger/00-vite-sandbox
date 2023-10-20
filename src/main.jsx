@@ -5,6 +5,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './components/Home.jsx'
 import About from './components/About.jsx'
 import Contact from './components/Contact.jsx'
+import Blog from './components/Blog.jsx'
+import BlogPost from './components/BlogPost.jsx'
+import { loader as blogPostLoader } from './components/BlogPost.jsx'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -15,15 +18,24 @@ const router = createBrowserRouter([
     children: [
       {
         path: '',
-        element: <Home />
+        element: <Home />,
       },
       {
         path: 'about',
-        element: <About />
+        element: <About />,
       },
       {
         path: 'contact',
-        element: <Contact />
+        element: <Contact />,
+      },
+      {
+        path: 'blog/:slug',
+        element: <BlogPost />,
+        loader: blogPostLoader,
+      },
+      {
+        path: 'blog',
+        element: <Blog />,
       },
     ],
   },
