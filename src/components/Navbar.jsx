@@ -1,9 +1,11 @@
-const Navbar = ({ setPage }) => {
+import { Link } from 'react-router-dom'
+
+const Navbar = () => {
   return (
     <nav className="d-flex justify-content-center gap-3 bg-dark p-3">
-      <a href="#" className="text-light" onClick={() => setPage('home')}>Home</a>
-      <a href="#" className="text-light" onClick={() => setPage('about')}>About</a>
-      <a href="#" className="text-light" onClick={() => setPage('contact')}>Contact</a>
+      <Link to="/">Home</Link>
+      <Link to="about">About</Link>
+      <Link to="contact">Contact</Link>
     </nav>
   )
 }
